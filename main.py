@@ -55,7 +55,7 @@ class APIs:
         elif login_res.text.__contains__("challenge_required"):  
             challenge_context = login_res.json()['challenge']['challenge_context']  
             challenge_res = requests.get(f"https://i.instagram.com{login_res.json()['challenge']['api_path']}?guid={self.guid}device_id={self.device_id}challenge_context={challenge_context}", headers=self.headers, cookies=login_res.cookies.get_dict(),allow_redirects=True)
-            
+            #TODO: complete the challenge 
         else:
             return False
                 
