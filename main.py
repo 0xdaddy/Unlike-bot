@@ -1,5 +1,4 @@
-import typing
-import requests,json,uuid,time,os,colorama
+import requests,json,uuid,time,os,colorama,typing
 
 class APIs:
     login_attempt_count: int = 0
@@ -116,6 +115,7 @@ def main() -> typing.Any:
                                 print("["+colorama.Fore.GREEN+"+"+colorama.Fore.RESET+f"] Done unlike -> https://www.instagram.com/p/{media_code}/")
                             else:
                                 print("["+colorama.Fore.RED+"-"+colorama.Fore.RESET+f"] Error while unlike -> https://www.instagram.com/p/{media_code}/")
+                            time.sleep(5)
                     except Exception:
                         print("["+colorama.Fore.RED+"-"+colorama.Fore.RESET+f"] Error while unlike")
                         exit(0)
